@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 requests = "*"
 gunicorn = "*"
+unicorn = "*"
 
 [dev-packages]
 nose = "*"
