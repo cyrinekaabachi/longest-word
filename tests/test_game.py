@@ -18,6 +18,9 @@ class TestGame(unittest.TestCase):
         self.assertIs(new_game.is_valid('EUREKA'), True) # assertIs tests for object identity (is / is not)
         self.assertEqual(new_game.grid, list('KWEUEAKRZ')) # tests for equality like the == operator
 
-    
+    def test_unknown_word_is_invalid(self):
+      new_game = Game()
+      new_game.grid = list('KWIENFUQW') # Force the grid to a test case:
+      self.assertIs(new_game.is_valid('FEUN'), False)
 
 
