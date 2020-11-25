@@ -21,7 +21,7 @@ class Game:
                 letters.remove(letter)
             else:
                 return False
-        return True
+        return True and __check_dictionary(word)
 
     def __check_dictionary(word):
         response = requests.get(f"https://wagon-dictionary.herokuapp.com/{word}")
