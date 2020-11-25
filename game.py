@@ -10,12 +10,7 @@ class Game:
         self.grid = []
         for _ in range(9):
             self.grid.append(random.choice(string.ascii_uppercase))
-
-    @staticmethod
-    def __check_dictionary(word):
-        response = requests.get(f"https://wagon-dictionary.herokuapp.com/{word}")
-        json_response = response.json()
-        return json_response['found']
+        return
 
     def is_valid(self, word):
         if not word:
@@ -26,4 +21,9 @@ class Game:
                 letters.remove(letter)
             else:
                 return False
-        return True and __check_dictionary(word)
+        return True
+
+    def __check_dictionary(word):
+        response = requests.get(f"https://wagon-dictionary.herokuapp.com/{word}")
+        json_response = response.json()
+        return json_response['found']
